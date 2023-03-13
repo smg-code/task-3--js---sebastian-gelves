@@ -26,12 +26,7 @@ function mostraCards(eventos) {
 
 mostraCards(eventos);
 
-const selectorCategoria1 = document.getElementById("Categoria-1")
-let e =0
-selectorCategoria1.addEventListener.t
-selectorCategoria1.addEventListener('click', (e) => {
-console.log(e)  
-})
+
 
 
 
