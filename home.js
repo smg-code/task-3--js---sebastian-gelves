@@ -1,4 +1,4 @@
-
+console.log([document])
 
 function mostraCards(eventos) {
     let body = ``;
@@ -15,7 +15,7 @@ function mostraCards(eventos) {
                             <p>Price $ ${eventos[i].price}</p>
                         </div>
                         <div class="col-6">
-                            <a href="Ficha.html" class="boton-ficha">Info</a>
+                            <a href="./Ficha.html?id=${eventos[i]._id}" class="boton-ficha">Info</a>
                         </div>
                   </div>
                 </div>

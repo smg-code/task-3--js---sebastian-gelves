@@ -30,7 +30,7 @@ eventos.forEach(each => {                          //recorre el array evento
 function checkBoxesYSearch(id_etiquetas,category) { //pido una etiqueta de un selector y
     // el array que contiene las categorias
     let barraSelectorYBusqueda = document.querySelector(id_etiquetas); //busca la etiqueta
-    console.log("barraSelectorYBusqueda", barraSelectorYBusqueda); // muestra por consola 
+    //console.log("barraSelectorYBusqueda", barraSelectorYBusqueda); // muestra por consola 
     //la donde encuentra la etiqueta
     //recorre el array category y  va generando los checkbox, con el nombre de las 
     //categorias
@@ -45,9 +45,7 @@ function checkBoxesYSearch(id_etiquetas,category) { //pido una etiqueta de un se
     })
     //genera el search para la busqueda
     category.push(`<input onkeyup="captureData()" id="ID_BUSQUEDA" 
-    class="contact-input" type="text" name="texto" placeholder="Busqueda"> 
-    <a href="#" class="lupa" ><i class=" fa-sharp fa-solid 
-    fa-magnifying-glass"></i></a>`)
+    class="contact-input" type="text" name="texto" placeholder="Busqueda">`)
     barraSelectorYBusqueda.innerHTML = category.join('');
 }
 
@@ -79,13 +77,11 @@ function captureData() {
         return ((each.name.includes(texto)) && 
         (checks.length === 0 || checks.includes(each.category)))
     })
-    console.log(filtro)
+    //console.log(filtro)
     if (filtro.length>0) {
         mostraCards(filtro);
-       // printTemplates('#pet_container',filtro)
     } else {
         mostraCards(nofound);
-       // notFound('#pet_container')
     }
 }
 
