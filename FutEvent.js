@@ -83,11 +83,11 @@ function captureData() {
     //console.log(checks) //por consola veo que categorias se seleccionaron
     //filtrado: recorro la array de datos 'eventos' busco en los name 
     let filtro = eventos.filter(each => {
-        each.name = each.name.toLocaleLowerCase() //con .toLocaleLowerCase() convierto el texto en minuscula
+        //con .toLocaleLowerCase() convierto el texto en minuscula
         //Con include recorre cada elemento buscando el texto  Y (que la parte de 
         //check de categorias este sin seleccionar o que si selecciona alguna
         //descarta la busqueda en las otras
-        return ((each.name.includes(texto)) && 
+        return ((each.name.toLocaleLowerCase().includes(texto)) && 
         (checks.length === 0 || checks.includes(each.category)))
     })
     console.log(filtro)

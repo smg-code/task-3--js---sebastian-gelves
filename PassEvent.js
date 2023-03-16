@@ -70,8 +70,7 @@ function captureData() {
     //console.log(texto)
     let checks = Array.from(document.querySelectorAll('.class_checks:checked')).map(each => each.value)
     let filtro = eventos.filter(each => {
-        each.name = each.name.toLocaleLowerCase() 
-        return ((each.name.includes(texto)) && 
+        return ((each.name.toLocaleLowerCase().includes(texto)) && 
         (checks.length === 0 || checks.includes(each.category)))
     })
     console.log(filtro)

@@ -61,6 +61,7 @@ function captureData() {
     //busco el selector de busqueda - el que tiene el id:ID_BUSQUEDA y capturo su valor
     //el input tiene la captura de teclas: onkeyup="captureData()" //activa la funcion
     let texto = document.getElementById('ID_BUSQUEDA').value.toLocaleLowerCase()
+    console.log(texto)
     //el .toLocaleLowerCase() convierte el texto ingresado en minuscula
 
     //busco los selectores con clase .class_checks:checked y que esten activados
@@ -69,12 +70,12 @@ function captureData() {
     let checks = Array.from(document.querySelectorAll('.class_checks:checked')).map(each => each.value)
     //console.log(checks) //por consola veo que categorias se seleccionaron
     //filtrado: recorro la array de datos 'eventos' busco en los name 
-    let filtro = eventos.filter(each => {
-        each.name = each.name.toLocaleLowerCase() //con .toLocaleLowerCase() convierto el texto en minuscula
+    let filtro = eventos.filter(each => {   
+        //con .toLocaleLowerCase() convierto el texto en minuscula
         //Con include recorre cada elemento buscando el texto  Y (que la parte de 
         //check de categorias este sin seleccionar o que si selecciona alguna
         //descarta la busqueda en las otras
-        return ((each.name.includes(texto)) && 
+        return ((each.name.toLocaleLowerCase().includes(texto)) && 
         (checks.length === 0 || checks.includes(each.category)))
     })
     //console.log(filtro)
